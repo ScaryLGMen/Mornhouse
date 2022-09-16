@@ -61,10 +61,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setItemRecycler(RecyclerView recyclerView) {
-
         List<Fact> items = db.getFactDao().getAll();
         Collections.reverse(items);
-
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(recyclerView.getContext(), RecyclerView.VERTICAL, false );
         recyclerView.setLayoutManager(layoutManager);
         FactAdapter adapter = new FactAdapter (recyclerView.getContext(), items, recyclerView);
